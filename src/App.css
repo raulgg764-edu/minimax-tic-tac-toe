@@ -1,0 +1,84 @@
+#root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+  
+}
+
+body{
+  margin: 0;
+  background-color: #151320;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1{
+  margin: 5rem;
+}
+
+select{
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  align-content: center;
+  background-color: transparent;
+  color: #eee;
+  text-align: center;
+  margin: 0 1em;
+}
+
+option{
+  background-color: #3e3e3e;
+  font-size: 2rem;
+}
+
+label{
+  margin-bottom: 1em;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  gap: 40px;
+}
+
+button{
+  cursor: pointer;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  border-radius: 16px;
+  border: 0;
+  outline: none;
+  position: relative;
+  background: #eee;
+  z-index: 1;
+  box-shadow: 0 1.25em 2.18em rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+button:hover:before{
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+  border-radius: 16px;
+  z-index: -1;
+  background-color: #eee;
+  
+}
+
+button:hover{
+  background: linear-gradient(90deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+  background-position: -106.25em 0;
+  transition: 10s linear; 
+}

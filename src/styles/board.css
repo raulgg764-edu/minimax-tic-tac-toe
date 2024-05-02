@@ -1,0 +1,21 @@
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.boardSlot{
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    list-style-type: none;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    font-size: 8rem;
+    
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
