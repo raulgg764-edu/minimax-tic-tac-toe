@@ -7,6 +7,7 @@ function App() {
 
   const [gameStatus, setGameStatus] = useState('init');
   const [players, setPlayers]=useState({player: 'X', machine: 'O'})
+  const [winner, setWinner] = useState('')
   
 
   const handleStart = (e) =>{
@@ -37,9 +38,15 @@ function App() {
         </form>
       }
 
-      {gameStatus === 'start' &&
-        <Board  players={players}/>
+      {gameStatus !== 'init' &&
+        <Board  players={players} setGameStatus={setGameStatus} setWinner={setWinner} gameStatus={gameStatus}/>
       }
+      {
+        gameStatus === 'end' &&
+        <h1>{winner}</h1>
+      }
+
+      
     </main>
   )
 }
