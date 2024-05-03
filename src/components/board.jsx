@@ -25,6 +25,8 @@ export default function Board({players, setGameStatus, setWinner, gameStatus}){
             
             //set new board
             setBoard(newBoard);
+            
+            handleDraw(board);
         }
     }
 
@@ -32,11 +34,14 @@ export default function Board({players, setGameStatus, setWinner, gameStatus}){
         if(winning(board, player)){
             setWinner(player)
             setGameStatus('end')
-        }else if (board.filter(i=>i===' ')===null){
-            setWinner('Draw')
-            setGameStatus('end')
+        }
+    }
 
+    const handleDraw = (board) =>{
+         if (board.filter((i)=>(i===' ')).length===1){
             
+            setWinner('Draw')
+            setGameStatus('end') 
         }
     }
 
