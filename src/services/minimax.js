@@ -18,9 +18,9 @@ export function winning(board, player) {
     }
   }
 
-  export function getEmptySlots(board){
-      return board.filter(i => (i !== 'O' && i !== 'X'));
-  }
+export function getEmptySlots(board){
+    return board.filter(i => (i !== 'O' && i !== 'X'));
+}
 
 export function convertBoard(board){
   let newBoard = [...board]
@@ -35,20 +35,22 @@ export function convertBoard(board){
 
 export function minimax(board, players, currentPlayer){
   
+  //Obtener slots vacios del tablero en la iteración
   let availableSlots = getEmptySlots(board);
+  
   if (winning(board, players.player)){
-    return {score: -10}
+    return {score: -10} // minimizar jugador
   }else if (winning(board, players.machine)){
-    return {score: 10}
+    return {score: 10} //Maximizar la ai 
   } else if (availableSlots.length === 0){
     return {score: 0}
   }
 
-  let moves = [];
+  let moves = []; //Arreglo de movimientos en la iteración
   for(let i=0;i<availableSlots.length;i++){
     let move = {};
     
-    move.index = board[availableSlots[i]];
+    move.index = board[availableSlots[i]]; 
     board[availableSlots[i]] = currentPlayer;
 
     if(currentPlayer===players.player){
@@ -81,7 +83,7 @@ export function minimax(board, players, currentPlayer){
             }
         }
   }
-
+  
   return moves[bestMove];
 
 }

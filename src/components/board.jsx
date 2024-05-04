@@ -25,7 +25,6 @@ export default function Board({players, setGameStatus, setWinner, gameStatus}){
             
             //set new board
             setBoard(newBoard);
-            
             handleDraw(board);
         }
     }
@@ -40,7 +39,7 @@ export default function Board({players, setGameStatus, setWinner, gameStatus}){
     const handleDraw = (board) =>{
          if (board.filter((i)=>(i===' ')).length===1){
             
-            setWinner('Draw')
+            setWinner('Empate')
             setGameStatus('end') 
         }
     }
@@ -50,9 +49,7 @@ export default function Board({players, setGameStatus, setWinner, gameStatus}){
             <ul className="board">
                 {board.map((value,index)=>
                   <li className="boardSlot" key={index} onClick={(e)=>{handleTurn(e,index)}}>{value}</li>                
-                )
-
-                }
+                )}
             </ul>
         </>
     )
